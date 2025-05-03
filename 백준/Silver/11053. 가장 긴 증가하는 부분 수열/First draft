@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int n, array[100];
+
+int lis(int start){
+	int res = 0;
+	if (start == n) return 1; // base cae, the last index
+	for (int i = 0; i < n; ++i){
+		if (array[start] < array[i]){
+			res = max(res, lis(i+1) + 1); // choose the biggest btw the esixting value and the new
+		}
+	}
+	return res;
+}
+
+int main() {
+	cin >> n;
+	for (int i = 0; i < n; ++i){
+		cin >> array[i];
+	}
+	cout << lis(0) << "\n";
+}
