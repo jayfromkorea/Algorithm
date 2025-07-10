@@ -1,7 +1,8 @@
-#include <iostream>
 using namespace std;
-
+#include <iostream>
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 	const int MX = 1000005;
 	int n, m, dat[2*MX + 1], head = MX, tail = MX;
 	string opt;
