@@ -1,27 +1,21 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
-	int dp[12], n, t, last = 4;
-	
-	dp[1] = 1;
-	dp[2] = 2;
-	dp[3] = 4;
-	dp[4] = 7;
-	
-	cin >> t;
-	
-	for (int i = 0; i < t; i++){
-		cin >> n;
-		if (last < n){
-			for (int i = last + 1; i <= n; i++){
-				dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
-			}
-			last = n;
-			cout << dp[n] << "\n";
-		} else {
-			cout << dp[n] << "\n";
+	int n, a;
+	int arr[12] = {0};
+	cin >> n;
+	arr[1] = 1;
+	arr[2] = 2;
+	arr[3] = 4;
+	for (int i = 4; i < 12; i++){
+		arr[i] = arr[i] + arr[i - 1] + arr[i - 2] + arr[i - 3];
 		}
+	while(n--){
+		cin >> a;
+		
+		cout << arr[a] << '\n';
 	}
-	
+	return 0;
 }
