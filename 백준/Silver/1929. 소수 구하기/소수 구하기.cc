@@ -15,11 +15,9 @@ int main() {
     // Sieve of Eratosthenes from 2 to sqrt(m)
     for (int i = 2; i * i <= m; ++i) {
         // Calculate the starting point for marking multiples of i
-        // It must be the first multiple of i that is >= n
-        int start = max(i * i, (n + i - 1) / i * i); // ceil(n / i) * i
 
         // Mark all multiples of i in the range [n, m] as not prime
-        for (int j = start; j <= m; j += i) {
+        for (int j = i * i; j <= m; j += i) {
             if (j >= n) v[j - n] = false;
         }
     }
