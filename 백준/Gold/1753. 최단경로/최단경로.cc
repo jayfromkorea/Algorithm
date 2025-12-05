@@ -24,7 +24,7 @@ void Djikstra(int str){
 			for (pair<int, int> e : adj[nxt.V]) {
 				if (dis[e.V] > dis[nxt.V] + e.W){
 					dis[e.V] = dis[nxt.V] + e.W;
-					pq.push({dis[nxt.V] + e.W, e.V});
+					pq.push({dis[e.V], e.V});
 				}
 			}
 		}
