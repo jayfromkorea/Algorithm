@@ -17,7 +17,10 @@ int main() {
 		if (cur == 0) return 0;
 		cur *= 10;
 		cout << cur / b;
+		// Yes!!
+		//Finally!!
 		cur %= b;
 	}
 	return 0;
+
 }
