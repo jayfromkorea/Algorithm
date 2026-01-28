@@ -21,6 +21,6 @@ int main() {
 		//Finally!!
 		cur %= b;
 	}
-	return 0;
-
+	
 }
+
