@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 const int MAX = 100005; 
@@ -22,7 +23,7 @@ int main(){
     int n, r, q;
     cin >> n >> r >> q;
     
-    for (int i = 1; i <= n; i++) dp[i] = -1;
+    fill (dp, dp + n, -1);
     
     int u, v;
     for (int i = 0; i < n-1; i++){
