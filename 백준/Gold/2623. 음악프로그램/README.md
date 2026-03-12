@@ -1,7 +1,7 @@
 # [Gold III] 음악프로그램 - 2623 
 
 [문제 링크](https://www.acmicpc.net/problem/2623)    
-[**Code Overview**](https://docs.google.com/document/d/e/2PACX-1vTR_j6pqkUpfWVKaC7FVipakYn5SHugkKPGvhWbEk15qh6wwezoGrBDTxa4Dty3KQcQ0C2SXVY5RkC6/pub)
+[**Code Overview**](https://docs.google.com/document/d/172wp4yWpGJfNt14aVrFB_hCrD5wVJJ-_zWBwn4GdpKc/edit?usp=sharing)
 
 ### 성능 요약
 
