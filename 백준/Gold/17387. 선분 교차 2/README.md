@@ -1,6 +1,6 @@
 # [Gold II] 선분 교차 2 - 17387 
 
-[문제 링크](https://www.acmicpc.net/problem/17387) #Code Overview(https://docs.google.com/document/d/1basbuwY2MWWXj_VzmXMEipSNn3nd6TtS78NxQtaGn2w/edit?usp=sharing)
+[문제 링크](https://www.acmicpc.net/problem/17387) #[Code Overview]([https://www.acmicpc.net/problem/17387](https://docs.google.com/document/d/1basbuwY2MWWXj_VzmXMEipSNn3nd6TtS78NxQtaGn2w/edit?usp=sharing))
 
 ### 성능 요약
 
