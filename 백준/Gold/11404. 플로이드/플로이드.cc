@@ -1,55 +1,49 @@
+#include <algorithm>
 #include <iostream>
-#include <vector>
 using namespace std;
+// Floyd
+// 2026.04.27
 
-const int INF = 1e9; // 충분히 큰 수 (100,000보다 크면 됨)
+int min_dis[105][105];
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
+int main(){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    
     int n, m;
     cin >> n >> m;
-
-    // 비용 배열 초기화
-    vector<vector<int>> dist(n, vector<int>(n, INF));
-
-    for (int i = 0; i < n; i++) {
-        dist[i][i] = 0; // 자기 자신으로 가는 비용 0
-    }
-
-    // 간선 정보 입력
-    for (int i = 0; i < m; i++) {
-        int a, b, c;
-        cin >> a >> b >> c;
-        a--; b--; // 0-based 인덱스
-        if (dist[a][b] > c) {
-            dist[a][b] = c; // 여러 간선 중 최소 비용 저장
+    
+    int u, v, c;
+    
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++){
+            if (i == j) {
+                min_dis[i][j] = 0;
+                continue;
+            }
+            min_dis[i][j] = 1e9;
         }
     }
-
-    // 플로이드-워셜 알고리즘
-    for (int k = 0; k < n; k++) {
-        for (int i = 0; i < n; i++) {
-            // 중간에 k가 포함된 경로를 고려
-            if (dist[i][k] == INF) continue; // 불필요한 계산 방지
-            for (int j = 0; j < n; j++) {
-                if (dist[k][j] == INF) continue;
-                if (dist[i][j] > dist[i][k] + dist[k][j]) {
-                    dist[i][j] = dist[i][k] + dist[k][j];
-                }
+    
+    while (m--){
+        cin >> u >> v >> c;
+        min_dis[u][v] = min(min_dis[u][v], c);
+    }
+    
+    for (int det = 1; det <= n; det++){ // det: detour
+        for (int i = 1; i <= n; i++){
+            for (int j =1; j <= n; j++){ 
+                //if (min_dis[i][det] == 1e9 || min_dis[det][j] == 1e9) continue; // if there is no edge connecting two nodes
+                min_dis[i][j] = min(min_dis[i][j], min_dis[i][det] + min_dis[det][j]);
             }
         }
     }
-
-    // 출력
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            if (dist[i][j] == INF) cout << 0 << ' ';
-            else cout << dist[i][j] << ' ';
+    
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++){
+            if (min_dis[i][j] == 1e9) cout << 0 << ' ';
+            else cout << min_dis[i][j] << ' ';
         }
         cout << '\n';
     }
-
-    return 0;
 }
